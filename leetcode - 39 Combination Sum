@@ -1,0 +1,31 @@
+class Solution {
+public:
+    
+    vector<vector<int>> fres;
+    vector<int> res;
+    
+    
+    void helper(int ind, int target, vector<int> &cand){
+        if(ind == cand.size()){
+            if(target == 0){
+                fres.push_back(res);
+            }
+            return;
+        }
+        
+        if(cand[ind] <= target){
+            res.push_back(cand[ind]);
+            helper(ind, target - cand[ind], cand);
+            res.pop_back();
+        }
+        
+        helper(ind + 1, target, cand);
+    }
+    
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        
+        helper(0, target, candidates);
+        return fres;
+        
+    }
+};
