@@ -1,0 +1,48 @@
+1st approach using Unordered map
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        
+        unordered_map<int, int> mp;
+        int n = nums.size();
+        for(int i = 0; i < n; i++){
+            mp[nums[i]]++;
+        }
+        
+        int ans = 0;
+        for(auto itr : mp){
+            if(itr.second > n/2){
+                ans = itr.first;
+            }
+        }
+        return ans;
+    }
+};
+
+
+2nd approach with linear time and Constant space
+This is Moore's Algorithm
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int m = nums[0];
+        int n = nums.size();
+        
+        int count = 1;
+        
+        for(int i = 1; i < n; i++){
+            if(nums[i] == m){
+                count++;
+            } else {
+                count--;
+            }
+            
+            if(count == 0){
+                m = nums[i];
+                count++;
+            }
+        }
+        return m;
+    }
+};
