@@ -1,0 +1,30 @@
+//Solved fibonacci number using Memoisation. First DP question :)
+
+class Solution {
+public:
+        
+    int fibHelper(int n, vector<int> &strg){
+        if(n == 0 || n == 1){
+            return n;
+        }
+        
+        if(strg[n] != 0){
+            return strg[n]; 
+        }
+        
+        int fnm1 = fibHelper(n - 1, strg);
+        int fnm2 = fibHelper(n - 2, strg);
+        
+        int fn = fnm1 + fnm2;
+        
+        strg[n] = fn;
+        return fn;
+    }
+    
+    
+    int fib(int n) {
+        vector<int> strg(n + 1);
+        int ans = fibHelper(n, strg);
+        return ans;
+    }
+};
