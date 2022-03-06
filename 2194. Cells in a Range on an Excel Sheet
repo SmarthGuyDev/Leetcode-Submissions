@@ -1,0 +1,13 @@
+class Solution {
+public:
+    vector<string> cellsInRange(string s) {
+        vector<string> v;
+        for(char l = s[0]; l <= s[3]; l++){
+            for(char n = s[1]; n <= s[4]; n++){
+                v.push_back({l, n});
+            }
+        }
+        return v;
+        
+    }
+};
