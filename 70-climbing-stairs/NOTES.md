@@ -1,0 +1,23 @@
+class Solution {
+public:
+int paths(int n, vector<int> &ans){
+if(n == 0){
+return 1;
+} else if(n < 0){
+return 0;
+}
+if(ans[n] != 0){
+return ans[n];
+}
+int pnm1 = paths(n - 1, ans);
+int pnm2 = paths(n - 2, ans);
+int pn = pnm1 + pnm2;
+ans[n] = pn;
+return pn;
+}
+int climbStairs(int n) {
+vector<int> ans(n + 1);
+int res = paths(n, ans);
+return res;
+}
+};``
