@@ -3,7 +3,7 @@ public:
     
     bool helper(string s, int i, int j){
         while(i < j){
-            if(s[i] == s[j]){
+            if(s.at(i) == s.at(j)){
                 i++;
                 j--;
             } else {
@@ -20,7 +20,7 @@ public:
         int j = s.length() - 1;
         
         while(i < j){
-            if(s[i] == s[j]){
+            if(s.at(i) == s.at(j)){
                 i++;
                 j--;
             } else {
