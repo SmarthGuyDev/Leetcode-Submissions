@@ -6,7 +6,7 @@ public:
         int left = 0;
         int right = height.size() - 1;
         
-        while(left <= right){
+        while(left < right){
             res = max(min(height[left], height[right]) * (right - left), res);
             
             if(height[right] > height[left]){
