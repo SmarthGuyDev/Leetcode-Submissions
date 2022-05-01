@@ -3,8 +3,6 @@ public:
     bool backspaceCompare(string s, string t) {
         
         stack<char> s1, s2;
-        int n = s.size();
-        int m = t.size();
         for(auto i : s){
             if(i == '#' && !s1.empty()){
                 s1.pop();
