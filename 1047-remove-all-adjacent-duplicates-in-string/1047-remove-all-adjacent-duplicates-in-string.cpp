@@ -24,7 +24,6 @@ public:
             temp.pop();
         }
         
-        
         return res;
     }
 };
