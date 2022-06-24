@@ -21,17 +21,16 @@ public:
         while(prev->next && prev->next->next){
             
             ListNode *curr = prev->next;
-            ListNode *forward = curr->next;
-            ListNode *temp = forward->next;
-        
+            ListNode *later = curr->next;
+            ListNode *again = later->next;
             
-            prev->next = forward;
-            forward->next = curr;
-            curr->next = temp;
+            prev->next = later;
+            later->next = curr;
+            curr->next = again;
             
             prev = curr;
         }
         return dummy->next;
+        
     }
-    
 };
